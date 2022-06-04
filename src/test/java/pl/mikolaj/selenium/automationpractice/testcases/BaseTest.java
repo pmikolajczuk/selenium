@@ -2,7 +2,7 @@ package pl.mikolaj.selenium.automationpractice.testcases;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import pl.mikolaj.selenium.automationpractice.config.WebDriverSingleton;
+import pl.mikolaj.selenium.config.WebDriverSingleton;
 
 public class BaseTest {
 

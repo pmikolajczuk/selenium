@@ -9,18 +9,12 @@ public class SignInTest extends BaseTest {
 
     @Test
     public void testSignIn() {
-        HomePage homePage = new HomePage();
-        homePage.clickSignInButton();
-
-        SignInPage signInPage = new SignInPage();
-        signInPage.enterSignInEmail("abc2@o2.pl");
-        signInPage.submitSignInEmail();
-
-        CreateAccountPage createAccountPage = new CreateAccountPage();
-        createAccountPage.selectMrGenderRadioButton();
-        createAccountPage.enterFirstName("Stefan");
-        createAccountPage.enterLastName("Kowalski");
-        createAccountPage.enterPassword("pass123");
-
+        new HomePage()
+                .clickSignInButton()
+                .enterSignInEmail("abc2@o2.pl")
+                .submitSignInEmail()
+                .enterFirstName("Stefan")
+                .enterLastName("Kowalski")
+                .enterPassword("pass123");
     }
 }

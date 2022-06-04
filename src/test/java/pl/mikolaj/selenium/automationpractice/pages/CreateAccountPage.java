@@ -17,19 +17,23 @@ public class CreateAccountPage extends BasePage{
     @FindBy(id = "passwd")
     private WebElement password;
 
-    public void selectMrGenderRadioButton() {
+    public CreateAccountPage selectMrGenderRadioButton() {
         mrGenderRadioButton.click();
+        return this;
     }
 
-    public void enterFirstName(String firstName) {
+    public CreateAccountPage enterFirstName(String firstName) {
         this.firstName.sendKeys(firstName);
+        return this;
     }
 
-    public void enterLastName(String lastName) {
+    public CreateAccountPage enterLastName(String lastName) {
         this.lastName.sendKeys(lastName);
+        return this;
     }
 
-    public void enterPassword(String password) {
+    public CreateAccountPage enterPassword(String password) {
         this.password.sendKeys(password);
+        return this;
     }
 }

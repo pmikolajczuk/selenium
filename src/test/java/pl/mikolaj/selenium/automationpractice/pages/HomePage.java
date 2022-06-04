@@ -10,8 +10,9 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//div[@id='contact-link']")
     WebElement contactUsButton;
 
-    public void clickSignInButton() {
+    public SignInPage clickSignInButton() {
         signInButton.click();
+        return new SignInPage();
     }
 
     public void clinkContactUsButton() {
