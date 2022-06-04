@@ -1,5 +1,6 @@
 package pl.mikolaj.selenium.automationpractice.pages;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,6 +11,8 @@ public class BasePage {
 
     @FindBy (id="columns")
     private WebElement pageContent;
+
+    protected Faker faker = new Faker();
 
     public BasePage() {
         PageFactory.initElements(WebDriverSingleton.getInstance(), this);

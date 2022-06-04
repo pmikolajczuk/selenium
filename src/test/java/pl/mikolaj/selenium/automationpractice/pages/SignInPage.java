@@ -11,12 +11,12 @@ public class SignInPage extends BasePage{
     @FindBy(xpath = "//button[@id='SubmitCreate']")
     private WebElement createAccButton;
 
-    public SignInPage enterCreateAccEmail(String email) {
-        createAccEmailInput.sendKeys(email);
+    public SignInPage enterCreateAccEmail() {
+        createAccEmailInput.sendKeys(faker.internet().emailAddress());
         return this;
     }
 
-    public CreateAccountPage submitCreateAccEmail() {
+    public CreateAccountPage pressCreateAccButton() {
         createAccButton.click();
         return new CreateAccountPage();
     }

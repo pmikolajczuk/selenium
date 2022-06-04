@@ -23,23 +23,13 @@ public class CreateAccountPage extends BasePage{
     @FindBy(css = "[class='alert alert-danger'")
     private WebElement registrationErrorMessage;
 
-    public CreateAccountPage selectMrGenderRadioButton() {
+    public CreateAccountPage fillRegistrationForm() {
         mrGenderRadioButton.click();
-        return this;
-    }
+        this.firstName.sendKeys(faker.name().firstName());
+        this.lastName.sendKeys(faker.name().lastName());
+        this.password.sendKeys(faker.internet().password());
+        //TODO: finish me
 
-    public CreateAccountPage enterFirstName(String firstName) {
-        this.firstName.sendKeys(firstName);
-        return this;
-    }
-
-    public CreateAccountPage enterLastName(String lastName) {
-        this.lastName.sendKeys(lastName);
-        return this;
-    }
-
-    public CreateAccountPage enterPassword(String password) {
-        this.password.sendKeys(password);
         return this;
     }
 
@@ -48,7 +38,7 @@ public class CreateAccountPage extends BasePage{
         return this;
     }
 
-    public boolean isRegistrationErrorMessage() {
+    public boolean isRegistrationErrorMessageDisplayed() {
         return this.registrationErrorMessage.isDisplayed();
     }
 }

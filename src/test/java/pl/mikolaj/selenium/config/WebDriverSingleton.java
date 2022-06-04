@@ -3,7 +3,6 @@ package pl.mikolaj.selenium.config;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
@@ -16,14 +15,15 @@ public class WebDriverSingleton {
             //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
         return driver;
     }
 
-    public static void quit() {
+    public static synchronized void quit() {
         if(driver != null) {
             driver.quit();
+            driver = null;
         }
     }
 }
