@@ -17,6 +17,12 @@ public class CreateAccountPage extends BasePage{
     @FindBy(id = "passwd")
     private WebElement password;
 
+    @FindBy(id = "submitAccount")
+    private WebElement registerButton;
+
+    @FindBy(css = "[class='alert alert-danger'")
+    private WebElement registrationErrorMessage;
+
     public CreateAccountPage selectMrGenderRadioButton() {
         mrGenderRadioButton.click();
         return this;
@@ -35,5 +41,14 @@ public class CreateAccountPage extends BasePage{
     public CreateAccountPage enterPassword(String password) {
         this.password.sendKeys(password);
         return this;
+    }
+
+    public CreateAccountPage pressRegisterButton() {
+        this.registerButton.click();
+        return this;
+    }
+
+    public boolean isRegistrationErrorMessage() {
+        return this.registrationErrorMessage.isDisplayed();
     }
 }

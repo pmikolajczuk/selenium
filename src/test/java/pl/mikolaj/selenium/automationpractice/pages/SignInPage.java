@@ -6,18 +6,18 @@ import org.openqa.selenium.support.FindBy;
 public class SignInPage extends BasePage{
 
     @FindBy(xpath = "//input[@id='email_create']")
-    private WebElement signInEmailInput;
+    private WebElement createAccEmailInput;
 
     @FindBy(xpath = "//button[@id='SubmitCreate']")
-    private WebElement createAccountButton;
+    private WebElement createAccButton;
 
-    public SignInPage enterSignInEmail(String email) {
-        signInEmailInput.sendKeys(email);
+    public SignInPage enterCreateAccEmail(String email) {
+        createAccEmailInput.sendKeys(email);
         return this;
     }
 
-    public CreateAccountPage submitSignInEmail() {
-        createAccountButton.click();
+    public CreateAccountPage submitCreateAccEmail() {
+        createAccButton.click();
         return new CreateAccountPage();
     }
 }
