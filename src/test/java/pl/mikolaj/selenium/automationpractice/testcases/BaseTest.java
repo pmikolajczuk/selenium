@@ -14,6 +14,6 @@ public class BaseTest {
     @AfterEach
     void tearDown() throws InterruptedException {
         Thread.sleep(5000);
-        WebDriverSingleton.getInstance().quit();
+        WebDriverSingleton.quit();
     }
 }
